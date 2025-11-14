@@ -5,6 +5,7 @@ import 'package:flutter_basic_games/games/tic_tac_toe_game.dart';
 import 'package:flutter_basic_games/games/memory_game.dart';
 import 'package:flutter_basic_games/games/snake_game.dart';
 import 'package:flutter_basic_games/games/game_2048.dart';
+import 'package:flutter_basic_games/games/catcher_game.dart';
 import 'package:flutter_basic_games/utils/game_settings.dart';
 
 void main() async {
@@ -43,6 +44,7 @@ class _MyAppState extends State<MyApp> {
         '/tic_tac_toe': (context) => const TicTacToeGame(),
         '/memory_game': (context) => const MemoryGame(),
         '/snake_game': (context) => const SnakeGame(),
+        '/catcher_game': (context) => const CatcherGame(),
         '/2048_game': (context) => const Game2048(),
       },
     );

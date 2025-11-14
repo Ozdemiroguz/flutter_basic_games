@@ -24,7 +24,13 @@ A mobile application featuring multiple customizable simple games with progressi
    - Obstacle courses in higher levels
    - Score targets to unlock next levels
 
-4. **2048**
+4. **Sky Catcher**
+   - Catch falling objects in your basket
+   - Avoid dangerous bombs
+   - Progressive speed and difficulty
+   - Multiple object types with different point values
+
+5. **2048**
    - Number merging puzzle game
    - Level-based score goals
    - Limited moves in challenge levels
@@ -37,6 +43,7 @@ A mobile application featuring multiple customizable simple games with progressi
   - Tic Tac Toe: Available from start
   - Memory Game: Unlock after completing 3 Tic Tac Toe levels
   - Snake: Unlock after completing 5 total levels
+  - Sky Catcher: Unlock after completing 7 total levels
   - 2048: Unlock after completing 10 total levels
 - **Star Rating**: Earn 1-3 stars based on performance
 - **Level Selection**: Choose from unlocked levels
@@ -145,6 +152,13 @@ flutter run
 - Level 4-6: Medium speed with obstacles
 - Level 7-10: Fast speed, complex mazes
 - Reach target score to complete level
+
+**Sky Catcher:**
+- Level 1-3: Slow falling, few bombs
+- Level 4-6: Faster speed, more objects
+- Level 7-10: Extreme speed, danger zone
+- Catch good objects, avoid bombs
+- Stars based on score achievement
 
 **2048:**
 - Level 1-3: Reach 512

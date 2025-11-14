@@ -54,6 +54,13 @@ class _HomeScreenState extends State<HomeScreen> {
         route: '/snake_game',
       ),
       GameModel(
+        title: 'Sky Catcher',
+        description: 'Catch falling objects',
+        icon: Icons.cloud_download,
+        color: Colors.blue,
+        route: '/catcher_game',
+      ),
+      GameModel(
         title: '2048',
         description: 'Merge numbers',
         icon: Icons.apps,
@@ -197,6 +204,9 @@ class _HomeScreenState extends State<HomeScreen> {
         break;
       case 'snake_game':
         message = 'Complete 5 total levels to unlock Snake!';
+        break;
+      case 'catcher_game':
+        message = 'Complete 7 total levels to unlock Sky Catcher!';
         break;
       case '2048_game':
         message = 'Complete 10 total levels to unlock 2048!';

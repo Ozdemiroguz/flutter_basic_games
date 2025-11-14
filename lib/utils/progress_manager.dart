@@ -21,6 +21,7 @@ class ProgressManager {
       'memory_game': _createMemoryGameLevels(),
       'snake_game': _createSnakeLevels(),
       '2048_game': _create2048Levels(),
+      'catcher_game': _createCatcherLevels(),
     };
 
     _gameProgress = {
@@ -28,6 +29,7 @@ class ProgressManager {
       'memory_game': GameProgress(gameId: 'memory_game'),
       'snake_game': GameProgress(gameId: 'snake_game'),
       '2048_game': GameProgress(gameId: '2048_game'),
+      'catcher_game': GameProgress(gameId: 'catcher_game'),
     };
   }
 
@@ -152,6 +154,21 @@ class ProgressManager {
     ];
   }
 
+  List<GameLevel> _createCatcherLevels() {
+    return [
+      GameLevel(levelNumber: 1, title: 'First Catch', description: 'Slow falling objects', gameId: 'catcher_game', config: {'targetScore': 50, 'fallSpeed': 1.5, 'spawnRate': 0.8, 'bombChance': 0.1}, isUnlocked: true),
+      GameLevel(levelNumber: 2, title: 'Getting Good', description: 'Normal speed', gameId: 'catcher_game', config: {'targetScore': 100, 'fallSpeed': 2.0, 'spawnRate': 1.0, 'bombChance': 0.15}),
+      GameLevel(levelNumber: 3, title: 'Watch Out!', description: 'More bombs', gameId: 'catcher_game', config: {'targetScore': 120, 'fallSpeed': 2.0, 'spawnRate': 1.0, 'bombChance': 0.2}),
+      GameLevel(levelNumber: 4, title: 'Speed Up', description: 'Faster falling', gameId: 'catcher_game', config: {'targetScore': 150, 'fallSpeed': 2.5, 'spawnRate': 1.2, 'bombChance': 0.2}),
+      GameLevel(levelNumber: 5, title: 'Rain Storm', description: 'More objects', gameId: 'catcher_game', config: {'targetScore': 180, 'fallSpeed': 2.5, 'spawnRate': 1.5, 'bombChance': 0.25}),
+      GameLevel(levelNumber: 6, title: 'Bomb Alert', description: 'Many bombs!', gameId: 'catcher_game', config: {'targetScore': 200, 'fallSpeed': 3.0, 'spawnRate': 1.5, 'bombChance': 0.3}),
+      GameLevel(levelNumber: 7, title: 'Expert Catcher', description: 'High speed', gameId: 'catcher_game', config: {'targetScore': 250, 'fallSpeed': 3.5, 'spawnRate': 1.8, 'bombChance': 0.3}),
+      GameLevel(levelNumber: 8, title: 'Danger Zone', description: 'Extreme challenge', gameId: 'catcher_game', config: {'targetScore': 300, 'fallSpeed': 4.0, 'spawnRate': 2.0, 'bombChance': 0.35}),
+      GameLevel(levelNumber: 9, title: 'Master Catcher', description: 'Lightning speed', gameId: 'catcher_game', config: {'targetScore': 350, 'fallSpeed': 4.5, 'spawnRate': 2.2, 'bombChance': 0.35}),
+      GameLevel(levelNumber: 10, title: 'Sky Legend', description: 'Ultimate test', gameId: 'catcher_game', config: {'targetScore': 500, 'fallSpeed': 5.0, 'spawnRate': 2.5, 'bombChance': 0.4}),
+    ];
+  }
+
   Future<void> loadProgress() async {
     final prefs = await SharedPreferences.getInstance();
 
@@ -214,6 +231,9 @@ class ProgressManager {
     // Snake: Unlock after 5 total levels completed
     int totalCompleted = _gameProgress.values.fold(0, (sum, progress) => sum + progress.levelsCompleted);
     _gameProgress['snake_game']!.isGameUnlocked = totalCompleted >= 5;
+
+    // Sky Catcher: Unlock after 7 total levels completed
+    _gameProgress['catcher_game']!.isGameUnlocked = totalCompleted >= 7;
 
     // 2048: Unlock after 10 total levels completed
     _gameProgress['2048_game']!.isGameUnlocked = totalCompleted >= 10;
