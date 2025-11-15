@@ -203,7 +203,7 @@ class _SnakeGameState extends State<SnakeGame> {
                           color: Colors.white,
                         );
                       } else if (isSnakeBody) {
-                        cellColor = settings.primaryColor.withOpacity(0.7);
+                        cellColor = settings.primaryColor.withValues(alpha: 0.7);
                       } else if (isFood) {
                         cellColor = settings.secondaryColor;
                         cellChild = const Icon(
@@ -309,7 +309,7 @@ class _SnakeGameState extends State<SnakeGame> {
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
-          color: color.withOpacity(0.1),
+          color: color.withValues(alpha: 0.1),
         ),
         child: Column(
           children: [

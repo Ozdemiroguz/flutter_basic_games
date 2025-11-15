@@ -86,7 +86,7 @@ class _SettingsScreenState extends State<SettingsScreen> {
                             vertical: 8,
                           ),
                           decoration: BoxDecoration(
-                            color: scheme['primary']!.withOpacity(0.2),
+                            color: scheme['primary']!.withValues(alpha: 0.2),
                             border: Border.all(
                               color: isSelected
                                   ? scheme['primary']!

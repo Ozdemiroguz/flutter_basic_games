@@ -33,7 +33,7 @@ class CatcherGame extends StatefulWidget {
 
 class _CatcherGameState extends State<CatcherGame> {
   GameLevel? level;
-  Function(int, int, {int?})? onComplete;
+  Function(int, int, {int? score})? onComplete;
 
   double basketX = 0.5; // Position (0.0 to 1.0)
   double basketWidth = 0.15;
@@ -96,7 +96,7 @@ class _CatcherGameState extends State<CatcherGame> {
     final args = ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?;
     if (args != null) {
       level = args['level'] as GameLevel?;
-      onComplete = args['onComplete'] as Function(int, int, {int?})?;
+      onComplete = args['onComplete'] as Function(int, int, {int? score})?;
       if (level != null) {
         targetScore = level!.config['targetScore'] ?? 100;
         fallSpeed = (level!.config['fallSpeed'] ?? 2.0).toDouble();
@@ -323,7 +323,7 @@ class _CatcherGameState extends State<CatcherGame> {
           // Stats
           Container(
             padding: const EdgeInsets.all(16),
-            color: settings.primaryColor.withOpacity(0.1),
+            color: settings.primaryColor.withValues(alpha: 0.1),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround,
               children: [

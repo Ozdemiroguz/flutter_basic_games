@@ -215,14 +215,14 @@ class _MemoryGameState extends State<MemoryGame> {
                           duration: const Duration(milliseconds: 300),
                           decoration: BoxDecoration(
                             color: cardMatched[index]
-                                ? Colors.green.withOpacity(0.3)
+                                ? Colors.green.withValues(alpha: 0.3)
                                 : isFlipped
                                     ? settings.primaryColor
                                     : settings.secondaryColor,
                             borderRadius: BorderRadius.circular(12),
                             boxShadow: [
                               BoxShadow(
-                                color: Colors.black.withOpacity(0.2),
+                                color: Colors.black.withValues(alpha: 0.2),
                                 blurRadius: 4,
                                 offset: const Offset(0, 2),
                               ),
@@ -261,7 +261,7 @@ class _MemoryGameState extends State<MemoryGame> {
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
-          color: color.withOpacity(0.1),
+          color: color.withValues(alpha: 0.1),
         ),
         child: Column(
           children: [

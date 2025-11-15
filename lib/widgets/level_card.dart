@@ -33,7 +33,7 @@ class LevelCard extends StatelessWidget {
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                     colors: [
-                      settings.primaryColor.withOpacity(0.7),
+                      settings.primaryColor.withValues(alpha: 0.7),
                       settings.primaryColor,
                     ],
                   )

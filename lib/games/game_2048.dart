@@ -48,7 +48,6 @@ class _Game2048State extends State<Game2048> {
   }
 
   bool move(Direction direction) {
-    List<List<int>> oldGrid = grid.map((row) => List<int>.from(row)).toList();
     bool moved = false;
 
     switch (direction) {
@@ -409,7 +408,7 @@ class _Game2048State extends State<Game2048> {
         padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
-          color: color.withOpacity(0.1),
+          color: color.withValues(alpha: 0.1),
         ),
         child: Column(
           children: [

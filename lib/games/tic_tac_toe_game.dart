@@ -15,7 +15,7 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
   bool isXTurn = true;
   String winner = '';
   GameLevel? level;
-  Function(int, int, {int?})? onComplete;
+  Function(int, int, {int? score})? onComplete;
 
   bool aiEnabled = false;
   String aiDifficulty = 'easy';
@@ -28,7 +28,7 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
     final args = ModalRoute.of(context)?.settings.arguments as Map<String, dynamic>?;
     if (args != null) {
       level = args['level'] as GameLevel?;
-      onComplete = args['onComplete'] as Function(int, int, {int?})?;
+      onComplete = args['onComplete'] as Function(int, int, {int? score})?;
       if (level != null) {
         aiEnabled = level!.config['aiEnabled'] ?? false;
         aiDifficulty = level!.config['difficulty'] ?? 'easy';
@@ -309,7 +309,7 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
               Container(
                 padding: const EdgeInsets.all(12),
                 decoration: BoxDecoration(
-                  color: settings.primaryColor.withOpacity(0.1),
+                  color: settings.primaryColor.withValues(alpha: 0.1),
                   borderRadius: BorderRadius.circular(8),
                 ),
                 child: Text(
@@ -381,7 +381,7 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
                       onTap: () => makeMove(index),
                       child: Container(
                         decoration: BoxDecoration(
-                          color: settings.primaryColor.withOpacity(0.1),
+                          color: settings.primaryColor.withValues(alpha: 0.1),
                           borderRadius: BorderRadius.circular(12),
                           border: Border.all(
                             color: settings.primaryColor,
@@ -441,7 +441,7 @@ class _TicTacToeGameState extends State<TicTacToeGame> {
         padding: const EdgeInsets.all(16),
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(12),
-          color: color.withOpacity(0.1),
+          color: color.withValues(alpha: 0.1),
         ),
         child: Column(
           children: [

@@ -35,7 +35,7 @@ class GameCard extends StatelessWidget {
                     begin: Alignment.topLeft,
                     end: Alignment.bottomRight,
                     colors: [
-                      game.color.withOpacity(0.7),
+                      game.color.withValues(alpha: 0.7),
                       game.color,
                     ],
                   ),
@@ -91,7 +91,7 @@ class GameCard extends StatelessWidget {
                   Container(
                     padding: const EdgeInsets.symmetric(horizontal: 12, vertical: 6),
                     decoration: BoxDecoration(
-                      color: Colors.white.withOpacity(0.3),
+                      color: Colors.white.withValues(alpha: 0.3),
                       borderRadius: BorderRadius.circular(12),
                     ),
                     child: Row(
